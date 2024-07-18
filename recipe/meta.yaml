@@ -1,5 +1,5 @@
 {% set name = "ariadne-codegen" %}
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ariadne_codegen-{{ version }}.tar.gz
-  sha256: 52aa67037dcd88a2f6013118e69ba0ed35a49f37312668a1969907f0e9c9bf8b
+  sha256: d5b15470195c3858b88a2bae855b5c04602ffae40228077b6cfb26a57d3f14f6
 
 build:
   entry_points:
