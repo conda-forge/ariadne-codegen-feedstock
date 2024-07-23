@@ -28,6 +28,9 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ariadne--codegen-green.svg)](https://anaconda.org/conda-forge/ariadne-codegen) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ariadne-codegen.svg)](https://anaconda.org/conda-forge/ariadne-codegen) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ariadne-codegen.svg)](https://anaconda.org/conda-forge/ariadne-codegen) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ariadne-codegen.svg)](https://anaconda.org/conda-forge/ariadne-codegen) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ariadne--codegen--with--all-green.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ariadne-codegen-with-all.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ariadne-codegen-with-all.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ariadne-codegen-with-all.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ariadne--codegen--with--opentelemetry-green.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-opentelemetry) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ariadne-codegen-with-opentelemetry.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-opentelemetry) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ariadne-codegen-with-opentelemetry.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-opentelemetry) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ariadne-codegen-with-opentelemetry.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-opentelemetry) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ariadne--codegen--with--websockets-green.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-websockets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ariadne-codegen-with-websockets.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-websockets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ariadne-codegen-with-websockets.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-websockets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ariadne-codegen-with-websockets.svg)](https://anaconda.org/conda-forge/ariadne-codegen-with-websockets) |
 
 Installing ariadne-codegen
 ==========================
@@ -39,16 +42,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ariadne-codegen` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ariadne-codegen, ariadne-codegen-with-all, ariadne-codegen-with-opentelemetry, ariadne-codegen-with-websockets` can be installed with `conda`:
 
 ```
-conda install ariadne-codegen
+conda install ariadne-codegen ariadne-codegen-with-all ariadne-codegen-with-opentelemetry ariadne-codegen-with-websockets
 ```
 
 or with `mamba`:
 
 ```
-mamba install ariadne-codegen
+mamba install ariadne-codegen ariadne-codegen-with-all ariadne-codegen-with-opentelemetry ariadne-codegen-with-websockets
 ```
 
 It is possible to list all of the versions of `ariadne-codegen` available on your platform with `conda`:
@@ -143,5 +146,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@ytausch](https://github.com/ytausch/)
 
