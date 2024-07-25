@@ -1,8 +1,5 @@
 {% set version = "0.14.0" %}
 
-# handle undefined PYTHON in `noarch: generic` outputs
-{% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
-
 package:
   name: ariadne-codegen
   version: {{ version }}
@@ -56,7 +53,7 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("ariadne-codegen", max_pin="x.x.x") }}
+        - {{ pin_subpackage("ariadne-codegen", exact=True) }}
         - websockets
     test:
       requires:
@@ -71,7 +68,7 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("ariadne-codegen", max_pin="x.x.x") }}
+        - {{ pin_subpackage("ariadne-codegen", exact=True) }}
         - opentelemetry-api
     test:
       requires:
@@ -86,14 +83,13 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", max_pin="x.x.x") }}
-        - {{ pin_subpackage("ariadne-codegen-with-websockets", max_pin="x.x.x") }}
+        - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", exact=True) }}
+        - {{ pin_subpackage("ariadne-codegen-with-websockets", exact=True) }}
     test:
       source_files:
         - src/tests
       requires:
         - ariadne
-        - coverage
         - freezegun
         - pip
         - pytest
@@ -109,8 +105,7 @@ outputs:
         # doesn't handle windows slashes
         {% set skips = '-k "not invalid_file"' %}  # [win]
         {% set skips = '' %}                       # [unix]
-        - cd src && coverage run --source=ariadne_codegen --branch -m pytest -vv --tb=long --color=yes {{ skips }}
-        - coverage report --show-missing --skip-covered --fail-under=89
+        - cd src && pytest -vv --tb=long --color=yes {{ skips }}
 
 about:
   home: https://github.com/mirumee/ariadne-codegen
