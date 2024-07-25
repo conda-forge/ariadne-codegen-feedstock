@@ -1,6 +1,9 @@
 {% set version = "0.14.0" %}
 {% set min_python = "python >=3.9" %}
 
+# handle undefined PYTHON in `noarch: generic` outputs
+{% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
+
 package:
   name: ariadne-codegen-split
   version: {{ version }}
@@ -14,14 +17,7 @@ source:
     sha256: 86d79970c8260fa8292e40ada695babcf47560d6ac599611d039daedaae8543c
 
 build:
-  noarch: python
-  number: 0
-
-requirements:
-  host:
-    - {{ min_python }}
-  run:
-    - {{ min_python }}
+  number: 1
 
 outputs:
   - name: ariadne-codegen
@@ -58,13 +54,10 @@ outputs:
 
   - name: ariadne-codegen-with-websockets
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - {{ min_python }}
       run:
         - {{ pin_subpackage("ariadne-codegen", exact=True) }}
-        - {{ min_python }}
         - websockets
     test:
       requires:
@@ -76,13 +69,10 @@ outputs:
         - ariadne-codegen --help
   - name: ariadne-codegen-with-opentelemetry
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - {{ min_python }}
       run:
         - {{ pin_subpackage("ariadne-codegen", exact=True) }}
-        - {{ min_python }}
         - opentelemetry-api
     test:
       requires:
@@ -94,14 +84,11 @@ outputs:
         - ariadne-codegen --help
   - name: ariadne-codegen-with-all
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - {{ min_python }}
       run:
         - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", exact=True) }}
         - {{ pin_subpackage("ariadne-codegen-with-websockets", exact=True) }}
-        - {{ min_python }}
     test:
       source_files:
         - src/tests
