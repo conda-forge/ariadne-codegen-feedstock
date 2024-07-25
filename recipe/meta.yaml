@@ -1,7 +1,7 @@
 {% set version = "0.14.0" %}
 
 package:
-  name: ariadne-codegen
+  name: ariadne-codegen-split
   version: {{ version }}
 
 source:
