@@ -18,6 +18,13 @@ source:
 
 build:
   number: 1
+  noarch: python
+
+requirements:
+  host:
+    - {{ min_python }}
+  run:
+    - {{ min_python }}
 
 outputs:
   - name: ariadne-codegen
@@ -57,7 +64,7 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("ariadne-codegen", exact=True) }}
+        - {{ pin_subpackage("ariadne-codegen", max_pin="x.x.x") }}
         - websockets
     test:
       requires:
@@ -72,7 +79,7 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("ariadne-codegen", exact=True) }}
+        - {{ pin_subpackage("ariadne-codegen", max_pin="x.x.x") }}
         - opentelemetry-api
     test:
       requires:
@@ -87,8 +94,8 @@ outputs:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", exact=True) }}
-        - {{ pin_subpackage("ariadne-codegen-with-websockets", exact=True) }}
+        - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", max_pin="x.x.x") }}
+        - {{ pin_subpackage("ariadne-codegen-with-websockets", max_pin="x.x.x") }}
     test:
       source_files:
         - src/tests
