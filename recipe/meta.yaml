@@ -1,5 +1,7 @@
 {% set version = "0.14.0" %}
 
+{% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
+
 package:
   name: ariadne-codegen
   version: {{ version }}
