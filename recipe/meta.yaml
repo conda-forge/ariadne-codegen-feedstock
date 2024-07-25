@@ -60,8 +60,11 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - {{ min_python }}
       run:
         - {{ pin_subpackage("ariadne-codegen", exact=True) }}
+        - {{ min_python }}
         - websockets
     test:
       requires:
@@ -75,8 +78,11 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - {{ min_python }}
       run:
         - {{ pin_subpackage("ariadne-codegen", exact=True) }}
+        - {{ min_python }}
         - opentelemetry-api
     test:
       requires:
@@ -90,9 +96,12 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - {{ min_python }}
       run:
         - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", exact=True) }}
         - {{ pin_subpackage("ariadne-codegen-with-websockets", exact=True) }}
+        - {{ min_python }}
     test:
       source_files:
         - src/tests
