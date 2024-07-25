@@ -17,6 +17,12 @@ build:
   noarch: python
   number: 0
 
+requirements:
+  host:
+    - {{ min_python }}
+  run:
+    - {{ min_python }}
+
 outputs:
   - name: ariadne-codegen
     build:
