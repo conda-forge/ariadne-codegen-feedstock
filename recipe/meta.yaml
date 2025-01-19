@@ -104,8 +104,10 @@ outputs:
         - pytest-asyncio
         - pytest-httpx
         - pytest-mock
-        - requests-toolbelt
         - python {{ python_min }}
+        - requests-toolbelt
+        # see https://github.com/mirumee/ariadne-codegen/issues/335
+        - httpx <0.28
       imports:
         - ariadne_codegen
       commands:
