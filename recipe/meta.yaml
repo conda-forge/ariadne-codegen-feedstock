@@ -94,9 +94,12 @@ outputs:
         - {{ pin_subpackage("ariadne-codegen-with-opentelemetry", exact=True) }}
         - {{ pin_subpackage("ariadne-codegen-with-websockets", exact=True) }}
     test:
+      files:
+        - run_test_all.py
       source_files:
         - src/tests
       requires:
+        - coverage
         - ariadne
         - freezegun
         - pip
@@ -113,10 +116,7 @@ outputs:
       commands:
         - pip check
         - ariadne-codegen --help
-        # doesn't handle windows slashes
-        {% set skips = '-k "not invalid_file"' %}  # [win]
-        {% set skips = '' %}                       # [unix]
-        - cd src && pytest -vv --tb=long --color=yes {{ skips }}
+        - python run_test_all.py
 
 about:
   home: https://github.com/mirumee/ariadne-codegen
