@@ -17,11 +17,14 @@ source:
     sha256: 539e0de73f80968e3e1530b09d5ffae6c746f41000acc859c8e409adb9f8bd5c
     target_directory: src
 
+build:
+  number: 0
+  noarch: python
+
 outputs:
   - package:
       name: ariadne-codegen
     build:
-      number: 0
       noarch: python
       script: cd dist && ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       python:
