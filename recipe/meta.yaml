@@ -1,4 +1,4 @@
-{% set version = "0.14.0" %}
+{% set version = "0.15.2" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -9,13 +9,13 @@ package:
 source:
   - folder: dist
     url: https://pypi.org/packages/source/a/ariadne-codegen/ariadne_codegen-{{ version }}.tar.gz
-    sha256: d5b15470195c3858b88a2bae855b5c04602ffae40228077b6cfb26a57d3f14f6
+    sha256: 44f0a3231f8bd201e908094adc7db564a04a047a14b2c13f6a94387cff5a8ab7
   - folder: src
     url: https://github.com/mirumee/ariadne-codegen/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 86d79970c8260fa8292e40ada695babcf47560d6ac599611d039daedaae8543c
+    sha256: 539e0de73f80968e3e1530b09d5ffae6c746f41000acc859c8e409adb9f8bd5c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
