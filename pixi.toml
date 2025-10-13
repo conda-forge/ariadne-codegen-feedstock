@@ -7,7 +7,7 @@
 
 [project]
 name = "ariadne-codegen-feedstock"
-version = "3.52.2"  # conda-smithy version used to generate this file
+version = "3.52.3"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/ariadne-codegen-feedstock"
 authors = ["@conda-forge/ariadne-codegen"]
 channels = ["conda-forge"]
