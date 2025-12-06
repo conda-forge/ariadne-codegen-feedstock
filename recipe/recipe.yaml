@@ -41,14 +41,14 @@ outputs:
         - python >=${{ python_min }}
         - autoflake
         - black
-        - click >=8.1,<9.0
+        - click >=8.3,<9.0
         - graphql-core >=3.2.0,<3.3
-        - httpx >=0.23,<1.0
+        - httpx >=0.28,<1.0
         - isort
         - pydantic >=2.0.0,<3.0.0
         - toml >=0.10,<1.0
       run_constraints:
-        - websockets >=14.2
+        - websockets >=15
     tests:
       - python:
           imports: ariadne_codegen
