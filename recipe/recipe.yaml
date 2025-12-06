@@ -2,8 +2,8 @@
 schema_version: 1
 
 context:
-  version: "0.16.0"
-  python_check_max: "3.13"
+  version: "0.17.0"
+  python_check_max: "3.14"
 
 recipe:
   name: ariadne-codegen
@@ -11,10 +11,10 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/a/ariadne-codegen/ariadne_codegen-${{ version }}.tar.gz
-    sha256: d92b4b8bef1ac5dfb04eb808bb022ec0ab2c44e8c0f236e7c16eada6a61c21f7
+    sha256: cbda41be0adae25cddc978d8d14cc48c3da6ef7ddf7bcd6af6ecb94ed374cf46
     target_directory: dist
   - url: https://github.com/mirumee/ariadne-codegen/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 9c21264aedbacd70f38d0b01deba8330d8edd9fd337960643ce25fb03499c475
+    sha256: ef764ee8bd39b6af1b2b09a233aac288f75a1cf3327ab5c701bbf1847990c367
     target_directory: src
 
 build:
@@ -26,7 +26,9 @@ outputs:
       name: ariadne-codegen
     build:
       noarch: python
-      script: cd dist && ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script:
+        - cd dist
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       python:
         entry_points:
           - ariadne-codegen = ariadne_codegen.main:main
@@ -39,14 +41,14 @@ outputs:
         - python >=${{ python_min }}
         - autoflake
         - black
-        - click >=8.1,<9.0
+        - click >=8.3,<9.0
         - graphql-core >=3.2.0,<3.3
-        - httpx >=0.23,<1.0
+        - httpx >=0.28,<1.0
         - isort
         - pydantic >=2.0.0,<3.0.0
         - toml >=0.10,<1.0
       run_constraints:
-        - websockets >=14.2
+        - websockets >=15
     tests:
       - python:
           imports: ariadne_codegen
