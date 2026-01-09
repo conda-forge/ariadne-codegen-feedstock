@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.17.0"
+  version: "0.17.1"
   python_check_max: "3.14"
 
 recipe:
@@ -11,10 +11,10 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/a/ariadne-codegen/ariadne_codegen-${{ version }}.tar.gz
-    sha256: cbda41be0adae25cddc978d8d14cc48c3da6ef7ddf7bcd6af6ecb94ed374cf46
+    sha256: 2e835c93b44b2a62289184d73d85c89bae9fa9b15270a842abbf061f9c218ce8
     target_directory: dist
   - url: https://github.com/mirumee/ariadne-codegen/archive/refs/tags/${{ version }}.tar.gz
-    sha256: ef764ee8bd39b6af1b2b09a233aac288f75a1cf3327ab5c701bbf1847990c367
+    sha256: 849651df0f0da2e5ad67f7e53a9a7dccb75e45848c39deef7dd5595868d0c9b8
     target_directory: src
 
 build:
