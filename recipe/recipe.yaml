@@ -134,7 +134,7 @@ outputs:
             - pytest-asyncio
             - pytest-httpx
             - pytest-mock
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
             - requests-toolbelt
         script:
           - pip check
