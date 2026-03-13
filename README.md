@@ -3,11 +3,13 @@ About ariadne-codegen-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ariadne-codegen-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/mirumee/ariadne-codegen
+Home: https://pypi.org/project/ariadne-codegen
 
 Package license: BSD-3-Clause
 
 Summary: Generate fully typed GraphQL client from schema, queries and mutations!
+
+Development: https://github.com/mirumee/ariadne-codegen
 
 Current build status
 ====================

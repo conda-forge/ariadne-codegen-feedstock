@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.17.2"
+  version: "0.18.0"
   python_check_max: "3.14"
 
 recipe:
@@ -11,10 +11,10 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/a/ariadne-codegen/ariadne_codegen-${{ version }}.tar.gz
-    sha256: 2b2fda27c2066a8d5ce4c8148607af7658e84c344cd6e2a29e9d31951b98d027
+    sha256: 13f28e73eb362cd10563aa8f6458fa022f28a8975cb13afa0c3dddb5476c2d59
     target_directory: dist
   - url: https://github.com/mirumee/ariadne-codegen/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 3dee9e3c88316e2febe6267bf4309e5926dff1abd38f1727c4531e1f9bcec715
+    sha256: 2084cb90e0ab2d39e06e389a248df3e7b93b24da43181e5c5e2f6cec3bb41a67
     target_directory: src
 
 build:
@@ -38,14 +38,12 @@ outputs:
         - pip
         - python ${{ python_min }}.*
       run:
-        - python >=${{ python_min }}
-        - autoflake
-        - black
         - click >=8.3,<9.0
         - graphql-core >=3.2.7,<3.3
         - httpx >=0.28,<1.0
-        - isort
         - pydantic >=2.0.0,<3.0.0
+        - python >=${{ python_min }}
+        - ruff>=0.15.0,<0.16.0
         - toml >=0.10,<1.0
       run_constraints:
         - websockets >=15
@@ -145,7 +143,8 @@ about:
   summary: Generate fully typed GraphQL client from schema, queries and mutations!
   license: BSD-3-Clause
   license_file: dist/LICENSE
-  homepage: https://github.com/mirumee/ariadne-codegen
+  homepage: https://pypi.org/project/ariadne-codegen
+  repository: https://github.com/mirumee/ariadne-codegen
 
 extra:
   feedstock-name: ariadne-codegen
