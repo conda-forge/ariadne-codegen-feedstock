@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.18.0"
+  version: "0.19.0"
   python_check_max: "3.14"
 
 recipe:
@@ -11,10 +11,10 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/a/ariadne-codegen/ariadne_codegen-${{ version }}.tar.gz
-    sha256: 13f28e73eb362cd10563aa8f6458fa022f28a8975cb13afa0c3dddb5476c2d59
+    sha256: 517024e02b5bb92eb0d136fe4902b593a5ca45b8ba38a2c683e2462902494714
     target_directory: dist
   - url: https://github.com/mirumee/ariadne-codegen/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 2084cb90e0ab2d39e06e389a248df3e7b93b24da43181e5c5e2f6cec3bb41a67
+    sha256: 1812be14113d52c1551f07030182efb915f29694ca669e0b7acbb005557c031e
     target_directory: src
 
 build:
@@ -41,7 +41,7 @@ outputs:
         - click >=8.3,<9.0
         - graphql-core >=3.2.7,<3.3
         - httpx >=0.28,<1.0
-        - pydantic >=2.0.0,<3.0.0
+        - pydantic >=2.8.0,<3.0.0
         - python >=${{ python_min }}
         - ruff>=0.15.0,<0.16.0
         - toml >=0.10,<1.0

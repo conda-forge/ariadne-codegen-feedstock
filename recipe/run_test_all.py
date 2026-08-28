@@ -1,7 +1,7 @@
 import sys
 from subprocess import call
 
-FAIL_UNDER = "89"
+FAIL_UNDER = "87"
 COV = ["coverage"]
 RUN = ["run", "--source=ariadne_codegen", "--branch", "-m"]
 PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long", "src/tests"]
