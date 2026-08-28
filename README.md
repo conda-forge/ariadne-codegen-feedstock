@@ -15,10 +15,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22640&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ariadne-codegen-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/ariadne-codegen-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/ariadne-codegen-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -44,31 +45,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ariadne-codegen, ariadne-codegen-with-all, ariadne-codegen-with-opentelemetry, ariadne-codegen-with-websockets` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install ariadne-codegen ariadne-codegen-with-all ariadne-codegen-with-opentelemetry ariadne-codegen-with-websockets
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install ariadne-codegen ariadne-codegen-with-all ariadne-codegen-with-opentelemetry ariadne-codegen-with-websockets
 ```
 
-It is possible to list all of the versions of `ariadne-codegen` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add ariadne-codegen ariadne-codegen-with-all ariadne-codegen-with-opentelemetry ariadne-codegen-with-websockets
+# for installing globally
+pixi global install ariadne-codegen ariadne-codegen-with-all ariadne-codegen-with-opentelemetry ariadne-codegen-with-websockets
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `ariadne-codegen` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search ariadne-codegen --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search ariadne-codegen --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search ariadne-codegen --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -80,6 +123,8 @@ mamba repoquery whoneeds ariadne-codegen --channel conda-forge
 # List dependencies of `ariadne-codegen`:
 mamba repoquery depends ariadne-codegen --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
